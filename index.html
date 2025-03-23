@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF.IO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('logo.jpg'); /* Background logo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .top-bar {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 36px; /* Font size increased */
+            font-weight: bold;
+            position: relative;
+        }
+        .top-bar .logo-left {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 50px; /* Small size for the logo */
+            height: auto;
+        }
+        .search-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .search-bar input {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        .product-container {
+            display: flex;
+            flex-direction: row; /* Products horizontal (row) mein display honge */
+            flex-wrap: wrap; /* Agar products zyada hain, toh next line par move ho jayenge */
+            justify-content: flex-start; /* Left align products */
+            padding: 20px;
+            gap: 20px; /* Products ke beech mein space */
+        }
+        .product {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px; /* Product box ki width */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .product:hover {
+            transform: scale(1.05); /* Hover effect */
+        }
+        .product img {
+            width: 100%; /* Image size reduced */
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px; /* Image shifted down */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .hidden {
+            display: none; /* Hide products by default */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <!-- Left Logo -->
+        <img src="logo-left.jpg" alt="Left Logo" class="logo-left"> <!-- Yahan apna left logo daalein -->
+        GIF.IO
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Product search karein..." oninput="searchProduct()">
+        </div>
+    </div>
+
+    <div class="product-container">
+        <!-- Product 1 -->
+        <div class="product" data-name="solo leveling shirt" onclick="window.open('https://amzn.to/4bZ9UvA', '_blank')">
+            <img src="https://m.media-amazon.com/images/I/71ZhXtICZFL._SX679_.jpg" alt="Solo Leveling Shirt">
+            <h3>Solo Leveling Arise Anime T-Shirt, White, Comfortable Fit, Unisex</h3>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product" data-name="iQOO Z9x 5G (Storm Grey, 6GB RAM, 128GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge" onclick="window.open('https://amzn.to/4iB7CoW', '_blank')">
+            <img src="https://m.media-amazon.com/images/I/61sY8BGOyEL._SX679_.jpg" alt="iQOO Z9x 5G (Storm Grey, 6GB RAM, 128GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge">
+            <h3>iQOO Z9x 5G (Storm Grey, 6GB RAM, 128GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge</h3>
+        </div>
+        <div class="product" data-name="Redmi A4 5G (Sparkle Purple, 4GB RAM, 128GB Storage) | Global Debut SD 4s Gen 2 | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging" onclick="window.open('https://amzn.to/4izwjSw', '_blank')">
+            <img src="https://m.media-amazon.com/images/I/81BGKLI+cWL._SX679_.jpg" alt="Redmi A4 5G (Sparkle Purple, 4GB RAM, 128GB Storage) | Global Debut SD 4s Gen 2 | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging">
+            <h3>Redmi A4 5G (Sparkle Purple, 4GB RAM, 128GB Storage) | Global Debut SD 4s Gen 2 | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging"</h3>
+    </div>
+    <div class="product" data-name="House of Quirk Garment Bags for Travel, Convertible Carry on Garment Bag Large Duffle Bags for Women, 2 in 1 Hanging Suitcase Suit Water Resistant Duffel Travel Bags with Shoe Pouch (Beige)" onclick="window.open('https://amzn.to/4hye0fe', '_blank')">
+        <img src="https://m.media-amazon.com/images/I/71G4Pq7-K9L._SX569_.jpg" alt="House of Quirk Garment Bags for Travel, Convertible Carry on Garment Bag Large Duffle Bags for Women, 2 in 1 Hanging Suitcase Suit Water Resistant Duffel Travel Bags with Shoe Pouch (Beige)">
+        <h3>House of Quirk Garment Bags for Travel, Convertible Carry on Garment Bag Large Duffle Bags for Women, 2 in 1 Hanging Suitcase Suit Water Resistant Duffel Travel Bags with Shoe Pouch (Beige)</h3>
+    </div>
+
+        <!-- Add more products here as needed -->
+    </div>
+
+    <script>
+        // Search functionality
+        function searchProduct() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const productName = product.getAttribute('data-name').toLowerCase();
+                if (productName.includes(searchQuery)) {
+                    product.classList.remove('hidden'); // Show product
+                } else {
+                    product.classList.add('hidden'); // Hide product
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
